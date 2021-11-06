@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 2,
-  "iteration": 1635323277400,
+  "iteration": 1636197752290,
   "links": [],
   "panels": [
     {
@@ -296,66 +296,137 @@
       "type": "piechart"
     },
     {
+      "aliasColors": {},
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
       "datasource": null,
       "fieldConfig": {
         "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 1
-              }
-            ]
-          },
           "unit": "short"
         },
         "overrides": []
       },
+      "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
-        "h": 3,
+        "h": 4,
         "w": 4,
         "x": 10,
         "y": 6
       },
+      "hiddenSeries": false,
       "id": 16,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {},
-        "textMode": "auto"
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
       },
+      "lines": false,
+      "linewidth": 1,
+      "nullPointMode": "null as zero",
+      "options": {
+        "alertThreshold": false
+      },
+      "percentage": false,
       "pluginVersion": "7.5.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "$$hashKey": "object:266",
+          "alias": "locks",
+          "bars": false,
+          "color": "#C4162A",
+          "lines": true
+        },
+        {
+          "$$hashKey": "object:274",
+          "alias": "unlocks",
+          "color": "#73BF69"
+        },
+        {
+          "$$hashKey": "object:4509",
+          "alias": "acks",
+          "color": "#FADE2A"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
       "targets": [
         {
           "exemplar": true,
-          "expr": "geokrety_cron_locked_scripts",
+          "expr": "ceil(rate(geokrety_scripts{status=\"unlocks\"}[30s]))",
+          "format": "time_series",
+          "hide": false,
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "unlocks",
+          "refId": "B"
+        },
+        {
+          "exemplar": true,
+          "expr": "ceil(rate(geokrety_scripts{status=\"unlocks\"}[30s]))",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "acks",
+          "refId": "C"
+        },
+        {
+          "exemplar": true,
+          "expr": "geokrety_scripts{status=\"locks\"}",
+          "interval": "",
+          "legendFormat": "locks",
           "refId": "A"
         }
       ],
+      "thresholds": [],
       "timeFrom": null,
+      "timeRegions": [],
       "timeShift": null,
       "title": "Locked scripts",
-      "type": "stat"
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:288",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:289",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "datasource": null,
@@ -512,10 +583,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 5,
+        "h": 4,
         "w": 4,
         "x": 10,
-        "y": 9
+        "y": 10
       },
       "highlightOnMouseover": true,
       "id": 17,
@@ -2367,7 +2438,9 @@
         }
       ],
       "thresholds": [],
+      "timeFrom": null,
       "timeRegions": [],
+      "timeShift": null,
       "title": "Awards",
       "tooltip": {
         "shared": true,
