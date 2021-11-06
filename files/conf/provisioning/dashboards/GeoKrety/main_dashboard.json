@@ -94,7 +94,7 @@
           "expr": "geokrety_sessions_total",
           "hide": false,
           "interval": "",
-          "legendFormat": "users {{status}}",
+          "legendFormat": "sessions {{status}}",
           "refId": "D"
         }
       ],
