@@ -371,7 +371,7 @@
         },
         {
           "exemplar": true,
-          "expr": "ceil(rate(geokrety_scripts{status=\"unlocks\"}[30s]))",
+          "expr": "ceil(rate(geokrety_scripts{status=\"acks\"}[30s]))",
           "hide": false,
           "interval": "",
           "legendFormat": "acks",
