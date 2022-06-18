@@ -16,9 +16,101 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 2,
-  "iteration": 1636214230413,
+  "iteration": 1655549026206,
   "links": [],
   "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 44,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "geokrety_rate_limit",
+          "interval": "",
+          "legendFormat": "{{type}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Rate Limits",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
     {
       "datasource": null,
       "fieldConfig": {
@@ -43,7 +135,7 @@
         "h": 6,
         "w": 21,
         "x": 0,
-        "y": 0
+        "y": 8
       },
       "id": 5,
       "options": {
@@ -130,23 +222,23 @@
         "h": 6,
         "w": 3,
         "x": 21,
-        "y": 0
+        "y": 8
       },
       "id": 27,
       "options": {
         "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "center",
+        "graphMode": "area",
+        "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
           ],
-          "fields": "/^v2\\.6.0\\-147-g048b8035$/",
+          "fields": "",
           "values": false
         },
         "text": {},
-        "textMode": "name"
+        "textMode": "auto"
       },
       "pluginVersion": "7.5.5",
       "targets": [
@@ -191,7 +283,7 @@
         "h": 8,
         "w": 5,
         "x": 0,
-        "y": 6
+        "y": 14
       },
       "id": 7,
       "options": {
@@ -259,7 +351,7 @@
         "h": 8,
         "w": 5,
         "x": 5,
-        "y": 6
+        "y": 14
       },
       "id": 6,
       "options": {
@@ -313,7 +405,7 @@
         "h": 4,
         "w": 4,
         "x": 10,
-        "y": 6
+        "y": 14
       },
       "hiddenSeries": false,
       "id": 16,
@@ -456,7 +548,7 @@
         "h": 8,
         "w": 5,
         "x": 14,
-        "y": 6
+        "y": 14
       },
       "id": 28,
       "options": {
@@ -519,7 +611,7 @@
         "h": 8,
         "w": 5,
         "x": 19,
-        "y": 6
+        "y": 14
       },
       "id": 12,
       "options": {
@@ -586,7 +678,7 @@
         "h": 4,
         "w": 4,
         "x": 10,
-        "y": 10
+        "y": 18
       },
       "highlightOnMouseover": true,
       "id": 17,
@@ -710,7 +802,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 14
+        "y": 22
       },
       "hiddenSeries": false,
       "id": 31,
@@ -818,7 +910,7 @@
         "h": 8,
         "w": 6,
         "x": 12,
-        "y": 14
+        "y": 22
       },
       "hiddenSeries": false,
       "id": 24,
@@ -914,7 +1006,7 @@
         "h": 8,
         "w": 6,
         "x": 18,
-        "y": 14
+        "y": 22
       },
       "hiddenSeries": false,
       "id": 29,
@@ -1013,7 +1105,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 22
+        "y": 30
       },
       "hiddenSeries": false,
       "id": 2,
@@ -1110,7 +1202,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 22
+        "y": 30
       },
       "hiddenSeries": false,
       "id": 20,
@@ -1206,7 +1298,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 30
+        "y": 38
       },
       "hiddenSeries": false,
       "id": 10,
@@ -1308,7 +1400,7 @@
         "h": 7,
         "w": 6,
         "x": 12,
-        "y": 30
+        "y": 38
       },
       "hiddenSeries": false,
       "id": 33,
@@ -1442,7 +1534,7 @@
         "h": 7,
         "w": 6,
         "x": 18,
-        "y": 30
+        "y": 38
       },
       "hiddenSeries": false,
       "id": 34,
@@ -1576,7 +1668,7 @@
         "h": 7,
         "w": 6,
         "x": 12,
-        "y": 37
+        "y": 45
       },
       "hiddenSeries": false,
       "id": 37,
@@ -1710,7 +1802,7 @@
         "h": 7,
         "w": 6,
         "x": 18,
-        "y": 37
+        "y": 45
       },
       "hiddenSeries": false,
       "id": 35,
@@ -1840,7 +1932,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 38
+        "y": 46
       },
       "hiddenSeries": false,
       "id": 22,
@@ -1940,7 +2032,7 @@
         "h": 7,
         "w": 6,
         "x": 12,
-        "y": 44
+        "y": 52
       },
       "hiddenSeries": false,
       "id": 36,
@@ -2074,7 +2166,7 @@
         "h": 7,
         "w": 6,
         "x": 18,
-        "y": 44
+        "y": 52
       },
       "hiddenSeries": false,
       "id": 38,
@@ -2207,7 +2299,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 46
+        "y": 54
       },
       "hiddenSeries": false,
       "id": 25,
@@ -2303,7 +2395,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 51
+        "y": 59
       },
       "hiddenSeries": false,
       "id": 8,
@@ -2400,7 +2492,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 54
+        "y": 62
       },
       "hiddenSeries": false,
       "id": 40,
@@ -2499,7 +2591,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 59
+        "y": 67
       },
       "hiddenSeries": false,
       "id": 19,
@@ -2650,7 +2742,7 @@
         "h": 6,
         "w": 3,
         "x": 0,
-        "y": 62
+        "y": 70
       },
       "id": 41,
       "options": {
@@ -2699,7 +2791,7 @@
         "h": 6,
         "w": 5,
         "x": 3,
-        "y": 62
+        "y": 70
       },
       "hiddenSeries": false,
       "id": 42,
@@ -2796,7 +2888,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 67
+        "y": 75
       },
       "hiddenSeries": false,
       "id": 32,
@@ -2882,47 +2974,15 @@
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": [
-      {
-        "allValue": null,
-        "current": {
-          "selected": false,
-          "text": "php_info{instance=\"website:80\",job=\"website\",version=\"7.4.25\"}",
-          "value": "php_info{instance=\"website:80\",job=\"website\",version=\"7.4.25\"}"
-        },
-        "datasource": null,
-        "definition": "php_info",
-        "description": null,
-        "error": null,
-        "hide": 0,
-        "includeAll": false,
-        "label": null,
-        "multi": false,
-        "name": "query0",
-        "options": [],
-        "query": {
-          "query": "php_info",
-          "refId": "StandardVariableQuery"
-        },
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "tagValuesQuery": "",
-        "tags": [],
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      }
-    ]
+    "list": []
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "GeoKrety Dashboard",
   "uid": "0DiNF_9Mz",
-  "version": 6
+  "version": 1
 }
