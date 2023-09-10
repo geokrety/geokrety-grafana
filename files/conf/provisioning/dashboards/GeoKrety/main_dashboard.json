@@ -997,6 +997,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "description": "",
       "fieldConfig": {
         "defaults": {},
         "overrides": []
@@ -1005,24 +1006,24 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 6,
+        "w": 12,
         "x": 12,
         "y": 22
       },
       "hiddenSeries": false,
-      "id": 24,
+      "id": 46,
       "legend": {
         "avg": false,
         "current": false,
         "max": false,
         "min": false,
-        "show": false,
+        "show": true,
         "total": false,
         "values": false
       },
       "lines": true,
       "linewidth": 1,
-      "nullPointMode": "connected",
+      "nullPointMode": "null",
       "options": {
         "alertThreshold": true
       },
@@ -1031,16 +1032,22 @@
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
-      "seriesOverrides": [],
+      "seriesOverrides": [
+        {
+          "$$hashKey": "object:1183",
+          "alias": "Logout",
+          "color": "#C4162A"
+        }
+      ],
       "spaceLength": 10,
       "stack": false,
-      "steppedLine": true,
+      "steppedLine": false,
       "targets": [
         {
           "exemplar": true,
-          "expr": "geokrety_mail",
+          "expr": "rate(geokrety_users_total[5m])",
           "interval": "",
-          "legendFormat": "Mails sent",
+          "legendFormat": "{{verb}}",
           "refId": "A"
         }
       ],
@@ -1048,7 +1055,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Mail sent",
+      "title": "Registration",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1064,119 +1071,20 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:478",
           "format": "short",
-          "label": "Mail sent",
+          "label": null,
           "logBase": 1,
           "max": null,
           "min": null,
           "show": true
         },
         {
-          "$$hashKey": "object:479",
           "format": "short",
           "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 6,
-        "x": 18,
-        "y": 22
-      },
-      "hiddenSeries": false,
-      "id": 29,
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "connected",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.5.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": true,
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "geokrety_cron_dailymail",
-          "interval": "",
-          "legendFormat": "{{status}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Daily mail stats",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:478",
-          "format": "short",
-          "label": "Count",
           "logBase": 1,
           "max": null,
           "min": null,
           "show": true
-        },
-        {
-          "$$hashKey": "object:479",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": false
         }
       ],
       "yaxis": {
@@ -1297,24 +1205,24 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 12,
+        "w": 6,
         "x": 12,
         "y": 30
       },
       "hiddenSeries": false,
-      "id": 20,
+      "id": 24,
       "legend": {
         "avg": false,
         "current": false,
         "max": false,
         "min": false,
-        "show": true,
+        "show": false,
         "total": false,
         "values": false
       },
       "lines": true,
       "linewidth": 1,
-      "nullPointMode": "null",
+      "nullPointMode": "connected",
       "options": {
         "alertThreshold": true
       },
@@ -1326,13 +1234,13 @@
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
-      "steppedLine": false,
+      "steppedLine": true,
       "targets": [
         {
           "exemplar": true,
-          "expr": "geokrety_sessions_total",
+          "expr": "geokrety_mail",
           "interval": "",
-          "legendFormat": "{{status}}",
+          "legendFormat": "Mails sent",
           "refId": "A"
         }
       ],
@@ -1340,7 +1248,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Connected users",
+      "title": "Mail sent",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1356,22 +1264,119 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:612",
+          "$$hashKey": "object:478",
           "format": "short",
-          "label": null,
+          "label": "Mail sent",
           "logBase": 1,
           "max": null,
           "min": null,
           "show": true
         },
         {
-          "$$hashKey": "object:613",
+          "$$hashKey": "object:479",
           "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
           "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 30
+      },
+      "hiddenSeries": false,
+      "id": 29,
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": true,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "geokrety_cron_dailymail",
+          "interval": "",
+          "legendFormat": "{{status}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Daily mail stats",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:478",
+          "format": "short",
+          "label": "Count",
+          "logBase": 1,
+          "max": null,
+          "min": null,
           "show": true
+        },
+        {
+          "$$hashKey": "object:479",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
         }
       ],
       "yaxis": {
@@ -1478,6 +1483,198 @@
       }
     },
     {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 38
+      },
+      "hiddenSeries": false,
+      "id": 20,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "geokrety_sessions_total",
+          "interval": "",
+          "legendFormat": "{{status}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Connected users",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:612",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:613",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 46
+      },
+      "hiddenSeries": false,
+      "id": 22,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "geokrety_watched_total",
+          "interval": "",
+          "legendFormat": "Users watching",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Watched Geokrety",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:464",
+          "format": "none",
+          "label": "Users",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:465",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
       "aliasColors": {
         "Deleted": "semi-dark-orange",
         "Error": "dark-red",
@@ -1497,7 +1694,7 @@
         "h": 7,
         "w": 6,
         "x": 12,
-        "y": 38
+        "y": 46
       },
       "hiddenSeries": false,
       "id": 33,
@@ -1631,7 +1828,7 @@
         "h": 7,
         "w": 6,
         "x": 18,
-        "y": 38
+        "y": 46
       },
       "hiddenSeries": false,
       "id": 34,
@@ -1765,7 +1962,7 @@
         "h": 7,
         "w": 6,
         "x": 12,
-        "y": 45
+        "y": 53
       },
       "hiddenSeries": false,
       "id": 37,
@@ -1899,7 +2096,7 @@
         "h": 7,
         "w": 6,
         "x": 18,
-        "y": 45
+        "y": 53
       },
       "hiddenSeries": false,
       "id": 35,
@@ -1975,370 +2172,6 @@
       "timeRegions": [],
       "timeShift": null,
       "title": "OKAPI RO",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:781",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:782",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 46
-      },
-      "hiddenSeries": false,
-      "id": 22,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.5.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "geokrety_watched_total",
-          "interval": "",
-          "legendFormat": "Users watching",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Watched Geokrety",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:464",
-          "format": "none",
-          "label": "Users",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:465",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {
-        "Deleted": "semi-dark-orange",
-        "Error": "dark-red",
-        "Skipped": "light-blue"
-      },
-      "bars": true,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 7,
-        "w": 6,
-        "x": 12,
-        "y": 52
-      },
-      "hiddenSeries": false,
-      "id": 36,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": false,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.5.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": false,
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "geokrety_waypoint_okapi_sync{status=\"added\",provider=\"OC_UK\"}",
-          "interval": "",
-          "legendFormat": "Added",
-          "refId": "A"
-        },
-        {
-          "exemplar": true,
-          "expr": "geokrety_waypoint_okapi_sync{status=\"updated\",provider=\"OC_UK\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Updated",
-          "refId": "E"
-        },
-        {
-          "exemplar": true,
-          "expr": "geokrety_waypoint_okapi_sync{status=\"skipped\",provider=\"OC_UK\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Skipped",
-          "refId": "D"
-        },
-        {
-          "exemplar": true,
-          "expr": "geokrety_waypoint_okapi_sync{status=\"deleted\",provider=\"OC_UK\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Deleted",
-          "refId": "B"
-        },
-        {
-          "exemplar": true,
-          "expr": "geokrety_waypoint_okapi_sync{status=\"error\",provider=\"OC_UK\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Error",
-          "refId": "C"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "OKAPI UK",
-      "tooltip": {
-        "shared": true,
-        "sort": 2,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:781",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:782",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {
-        "Deleted": "semi-dark-orange",
-        "Error": "dark-red",
-        "Skipped": "light-blue"
-      },
-      "bars": true,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 7,
-        "w": 6,
-        "x": 18,
-        "y": 52
-      },
-      "hiddenSeries": false,
-      "id": 38,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": false,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.5.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": true,
-      "steppedLine": false,
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "geokrety_waypoint_okapi_sync{status=\"added\",provider=\"OC_US\"}",
-          "interval": "",
-          "legendFormat": "Added",
-          "refId": "A"
-        },
-        {
-          "exemplar": true,
-          "expr": "geokrety_waypoint_okapi_sync{status=\"updated\",provider=\"OC_US\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Updated",
-          "refId": "E"
-        },
-        {
-          "exemplar": true,
-          "expr": "geokrety_waypoint_okapi_sync{status=\"skipped\",provider=\"OC_US\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Skipped",
-          "refId": "D"
-        },
-        {
-          "exemplar": true,
-          "expr": "geokrety_waypoint_okapi_sync{status=\"deleted\",provider=\"OC_US\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Deleted",
-          "refId": "B"
-        },
-        {
-          "exemplar": true,
-          "expr": "geokrety_waypoint_okapi_sync{status=\"error\",provider=\"OC_US\"}",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Error",
-          "refId": "C"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "OKAPI US",
       "tooltip": {
         "shared": true,
         "sort": 2,
@@ -2477,8 +2310,12 @@
       }
     },
     {
-      "aliasColors": {},
-      "bars": false,
+      "aliasColors": {
+        "Deleted": "semi-dark-orange",
+        "Error": "dark-red",
+        "Skipped": "light-blue"
+      },
+      "bars": true,
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
@@ -2489,23 +2326,25 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 8,
-        "w": 12,
+        "h": 7,
+        "w": 6,
         "x": 12,
-        "y": 59
+        "y": 60
       },
       "hiddenSeries": false,
-      "id": 8,
+      "id": 36,
       "legend": {
+        "alignAsTable": true,
         "avg": false,
-        "current": false,
+        "current": true,
         "max": false,
         "min": false,
+        "rightSide": true,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
-      "lines": true,
+      "lines": false,
       "linewidth": 1,
       "nullPointMode": "null",
       "options": {
@@ -2518,25 +2357,57 @@
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
-      "stack": false,
+      "stack": true,
       "steppedLine": false,
       "targets": [
         {
           "exemplar": true,
-          "expr": "rate(geokrety_total_requests[5m])",
+          "expr": "geokrety_waypoint_okapi_sync{status=\"added\",provider=\"OC_UK\"}",
           "interval": "",
-          "legendFormat": "{{instance}}:{{verb}}",
+          "legendFormat": "Added",
           "refId": "A"
+        },
+        {
+          "exemplar": true,
+          "expr": "geokrety_waypoint_okapi_sync{status=\"updated\",provider=\"OC_UK\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Updated",
+          "refId": "E"
+        },
+        {
+          "exemplar": true,
+          "expr": "geokrety_waypoint_okapi_sync{status=\"skipped\",provider=\"OC_UK\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Skipped",
+          "refId": "D"
+        },
+        {
+          "exemplar": true,
+          "expr": "geokrety_waypoint_okapi_sync{status=\"deleted\",provider=\"OC_UK\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Deleted",
+          "refId": "B"
+        },
+        {
+          "exemplar": true,
+          "expr": "geokrety_waypoint_okapi_sync{status=\"error\",provider=\"OC_UK\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Error",
+          "refId": "C"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Pages view",
+      "title": "OKAPI UK",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -2549,16 +2420,150 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:558",
+          "$$hashKey": "object:781",
           "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
-          "min": "0",
+          "min": null,
           "show": true
         },
         {
-          "$$hashKey": "object:559",
+          "$$hashKey": "object:782",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "Deleted": "semi-dark-orange",
+        "Error": "dark-red",
+        "Skipped": "light-blue"
+      },
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 18,
+        "y": 60
+      },
+      "hiddenSeries": false,
+      "id": 38,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": false,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "geokrety_waypoint_okapi_sync{status=\"added\",provider=\"OC_US\"}",
+          "interval": "",
+          "legendFormat": "Added",
+          "refId": "A"
+        },
+        {
+          "exemplar": true,
+          "expr": "geokrety_waypoint_okapi_sync{status=\"updated\",provider=\"OC_US\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Updated",
+          "refId": "E"
+        },
+        {
+          "exemplar": true,
+          "expr": "geokrety_waypoint_okapi_sync{status=\"skipped\",provider=\"OC_US\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Skipped",
+          "refId": "D"
+        },
+        {
+          "exemplar": true,
+          "expr": "geokrety_waypoint_okapi_sync{status=\"deleted\",provider=\"OC_US\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Deleted",
+          "refId": "B"
+        },
+        {
+          "exemplar": true,
+          "expr": "geokrety_waypoint_okapi_sync{status=\"error\",provider=\"OC_US\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Error",
+          "refId": "C"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "OKAPI US",
+      "tooltip": {
+        "shared": true,
+        "sort": 2,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:781",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:782",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2670,10 +2675,7 @@
       }
     },
     {
-      "aliasColors": {
-        "Comment": "blue",
-        "Missing": "dark-red"
-      },
+      "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
@@ -2691,19 +2693,19 @@
         "y": 67
       },
       "hiddenSeries": false,
-      "id": 19,
+      "id": 8,
       "legend": {
         "avg": false,
         "current": false,
         "max": false,
         "min": false,
-        "show": false,
+        "show": true,
         "total": false,
         "values": false
       },
       "lines": true,
       "linewidth": 1,
-      "nullPointMode": "connected",
+      "nullPointMode": "null",
       "options": {
         "alertThreshold": true
       },
@@ -2719,9 +2721,9 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "geokrety_news_comments_total",
+          "expr": "rate(geokrety_total_requests[5m])",
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "{{instance}}:{{verb}}",
           "refId": "A"
         }
       ],
@@ -2729,7 +2731,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "News Comments",
+      "title": "Pages view",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -2745,22 +2747,22 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:464",
+          "$$hashKey": "object:558",
           "format": "short",
-          "label": "Comments",
+          "label": null,
           "logBase": 1,
           "max": null,
           "min": "0",
           "show": true
         },
         {
-          "$$hashKey": "object:465",
+          "$$hashKey": "object:559",
           "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
           "min": null,
-          "show": false
+          "show": true
         }
       ],
       "yaxis": {
@@ -2988,6 +2990,105 @@
         "y": 75
       },
       "hiddenSeries": false,
+      "id": 19,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "geokrety_news_comments_total",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "News Comments",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:464",
+          "format": "short",
+          "label": "Comments",
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:465",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {
+        "Comment": "blue",
+        "Missing": "dark-red"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 83
+      },
+      "hiddenSeries": false,
       "id": 32,
       "legend": {
         "avg": false,
@@ -3081,5 +3182,5 @@
   "timezone": "",
   "title": "GeoKrety Dashboard",
   "uid": "0DiNF_9Mz",
-  "version": 1
+  "version": 2
 }
