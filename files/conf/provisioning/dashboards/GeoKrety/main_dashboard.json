@@ -65,10 +65,19 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "rate(geokrety_tracker[1m])",
+          "expr": "rate(geokrety_tracker[1m])*60",
+          "hide": true,
           "interval": "",
           "legendFormat": "{{status}}",
           "refId": "A"
+        },
+        {
+          "exemplar": true,
+          "expr": "rate(geokrety_tracker[5m])*5*60",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{status}}",
+          "refId": "B"
         }
       ],
       "thresholds": [],
@@ -161,7 +170,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "geokrety_rate_limit",
+          "expr": "rate(geokrety_rate_limit[5m])*5*60",
           "interval": "",
           "legendFormat": "{{type}}",
           "refId": "A"
@@ -936,15 +945,17 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "geokrety_explicit_logout_total",
+          "expr": "rate(geokrety_explicit_logout_total[5m])*5*60",
           "hide": false,
+          "instant": false,
           "interval": "",
+          "intervalFactor": 1,
           "legendFormat": "Logout",
           "refId": "B"
         },
         {
           "exemplar": true,
-          "expr": "geokrety_logged_in_users_total",
+          "expr": "rate(geokrety_logged_in_users_total[5m])*5*60",
           "interval": "",
           "legendFormat": "{{type}}",
           "refId": "A"
@@ -1045,7 +1056,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "rate(geokrety_users_total[5m])",
+          "expr": "ceil(rate(geokrety_users_total[5m]))",
           "interval": "",
           "legendFormat": "{{verb}}",
           "refId": "A"
@@ -1238,7 +1249,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "geokrety_mail",
+          "expr": "rate(geokrety_mail[5m])*5*60",
           "interval": "",
           "legendFormat": "Mails sent",
           "refId": "A"
@@ -1335,7 +1346,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "geokrety_cron_dailymail",
+          "expr": "rate(geokrety_cron_dailymail[5m])*5*60",
           "interval": "",
           "legendFormat": "{{status}}",
           "refId": "A"
